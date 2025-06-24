@@ -1,0 +1,8 @@
+baseURL = "https://sookie-id.github.io/tanya-teman"
+languageCode = "id-ID"
+title = "Tanya Teman"
+theme = ""
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

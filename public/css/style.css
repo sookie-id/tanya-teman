@@ -1,0 +1,27 @@
+body { 
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 5rem;
+    background-color: #fffdf1;
+
+    h1 {
+        font-size: 1.5rem;
+        color: #392e55;
+        margin-top: 0;
+        font-weight: 500;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 0;
+    }
+}
+button {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: #eab545;
+    color: #392e55;
+    border: #392e55 2px solid;
+}
