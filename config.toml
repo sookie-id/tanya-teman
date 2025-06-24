@@ -1,4 +1,6 @@
 baseURL = "https://sookie-id.github.io/tanya-teman"
+relativeURLs = true
+canonifyURLs = true
 languageCode = "id-ID"
 title = "Tanya Teman"
 theme = ""
