@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sookie-id.github.io/tanya-teman/categories/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>https://sookie-id.github.io/tanya-teman/</loc>
+    <loc>/</loc>
   </url><url>
-    <loc>https://sookie-id.github.io/tanya-teman/tags/</loc>
+    <loc>/tags/</loc>
   </url>
 </urlset>
