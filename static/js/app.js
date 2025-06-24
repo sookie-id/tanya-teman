@@ -35,6 +35,7 @@ function setQuestionOrder() {
 let questionOrder = JSON.parse(localStorage.getItem("questionOrder") || "null");
 if (!questionOrder || questionOrder.length !== questions.length) {
   setQuestionOrder();
+  questionOrder = JSON.parse(localStorage.getItem("questionOrder") || "null");
   current = 0;
 }
 
