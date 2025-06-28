@@ -9,7 +9,7 @@ export class QuestionsHandler {
     }
 
     // If questionOrder is not defined, set it to [0, 1, 2, ..., this.questions.length - 1]
-    this.questionOrder = questionsOrder || Array.from({ length: this.questions.length }, (_, i) => i);
+    this.questionsOrder = questionsOrder || Array.from({ length: this.questions.length }, (_, i) => i);
 
     this.questionDivElement = questionDivElement;
     this.type = type;
@@ -31,7 +31,7 @@ export class QuestionsHandler {
       `;
       return;
     }
-    const question = this.questions[this.questionOrder[this.questionCurrentIndex]];
+    const question = this.questions[this.questionsOrder[this.questionCurrentIndex]];
     this.questionDivElement.innerHTML = `
       ${question.category === 'to_child' ? '<p class="bold">Ditanyakan oleh orang tua ke anak:</p>' : ''}
       ${question.category === 'to_parent' ? '<p class="bold">Ditanyakan oleh anak ke orang tua:</p>' : ''}
