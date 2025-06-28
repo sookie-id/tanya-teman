@@ -17,6 +17,7 @@ body {
         margin-bottom: 0;
     }
 }
+
 button {
     margin: 1rem;
     padding: 1rem 2rem;
@@ -24,4 +25,8 @@ button {
     background-color: #eab545;
     color: #392e55;
     border: #392e55 2px solid;
+}
+
+.bold {
+    font-weight: bold;
 }

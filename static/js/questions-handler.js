@@ -2,14 +2,14 @@ import { STORAGE_KEYS } from "./constants.js";
 
 
 export class QuestionsHandler {
-  constructor({questionsData, questionOrder, questionDivElement, type}) {
+  constructor({questionsData, questionsOrder, questionDivElement, type}) {
     this.questions = [];
     for (const [category, qs] of Object.entries(questionsData)) {
       this.questions.push(...qs.map((text) => ({ text, category })));
     }
 
     // If questionOrder is not defined, set it to [0, 1, 2, ..., this.questions.length - 1]
-    this.questionOrder = questionOrder || Array.from({ length: this.questions.length }, (_, i) => i);
+    this.questionOrder = questionsOrder || Array.from({ length: this.questions.length }, (_, i) => i);
 
     this.questionDivElement = questionDivElement;
     this.type = type;
@@ -33,6 +33,8 @@ export class QuestionsHandler {
     }
     const question = this.questions[this.questionOrder[this.questionCurrentIndex]];
     this.questionDivElement.innerHTML = `
+      ${question.category === 'to_child' ? '<p class="bold">Ditanyakan oleh orang tua ke anak:</p>' : ''}
+      ${question.category === 'to_parent' ? '<p class="bold">Ditanyakan oleh anak ke orang tua:</p>' : ''}
       <p>${question.text}</p>
       <button onclick="handler.next()">Lanjut</button>
       <button onclick="handler.restart()">Ulangi</button>

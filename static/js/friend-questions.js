@@ -24,17 +24,17 @@ function setQuestionsOrder() {
 
   shuffle(otherQuestions);
 
-  const questionOrder = [
+  const questionsOrder = [
     ...firstCategoryQuestions.slice(0, 5),
     ...otherQuestions,
   ].map((item) => item.i);
 
   localStorage.setItem(
     STORAGE_KEYS.FRIEND.ORDER,
-    JSON.stringify(questionOrder)
+    JSON.stringify(questionsOrder)
   );
 
-  return questionOrder;
+  return questionsOrder;
 }
 
 let questionsOrder = JSON.parse(

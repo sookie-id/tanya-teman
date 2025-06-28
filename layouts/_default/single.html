@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }}</title>
+  {{ with .Params.scripts }}
+    {{ range . }}
+        <script type="module" src="{{ . }}" defer></script>
+    {{ end }}
+  {{ end }}
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <img src="/images/sookie-logo.png">
+  <h1>Quiz</h1>
+  <div id="question-box">
+    <p>Loading...</p>
+  </div>
+
+  {{ with .Params.questions_data }}
+    {{ $questions := index site.Data . }}
+    <script>
+        const questionsData = {{ $questions }};
+    </script>
+  {{ end }}
+</body>
+</html>

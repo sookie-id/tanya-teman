@@ -9,28 +9,40 @@ for (const [category, qs] of Object.entries(questionsData)) {
 }
 
 function setQuestionsOrder() {
-  let firstCategoryQuestions = questions
+  // Separate questions by category
+  let toChildQuestions = questions
     .map((q, i) => ({ q, i }))
-    .filter((item) => item.q.category === TARGET_CATEGORY);
+    .filter((item) => item.q.category === "to_child");
+  let toParentQuestions = questions
+    .map((q, i) => ({ q, i }))
+    .filter((item) => item.q.category === "to_parent");
   let otherQuestions = questions
     .map((q, i) => ({ q, i }))
-    .filter((item) => item.q.category !== TARGET_CATEGORY);
+    .filter(
+      (item) =>
+        item.q.category !== "to_child" && item.q.category !== "to_parent"
+    );
 
-  shuffle(firstCategoryQuestions);
-  const extraFirstCategoryQuestions = firstCategoryQuestions.slice(5);
-  firstCategoryQuestions = firstCategoryQuestions.slice(0, 5);
-
-  otherQuestions = [...otherQuestions, ...extraFirstCategoryQuestions];
-
+  // Shuffle each group
+  shuffle(toChildQuestions);
+  shuffle(toParentQuestions);
   shuffle(otherQuestions);
 
-  const questionsOrder = [
-    ...firstCategoryQuestions.slice(0, 5),
-    ...otherQuestions,
-  ].map((item) => item.i);
+  // Alternate between to_child and to_parent
+  const maxLen = Math.max(toChildQuestions.length, toParentQuestions.length);
+  let alternated = [];
+  for (let i = 0; i < maxLen; i++) {
+    if (i < toChildQuestions.length) alternated.push(toChildQuestions[i]);
+    if (i < toParentQuestions.length) alternated.push(toParentQuestions[i]);
+  }
+
+  // Add other questions at the end (shuffled)
+  alternated = [...alternated, ...otherQuestions];
+
+  const questionsOrder = alternated.map((item) => item.i);
 
   localStorage.setItem(
-    STORAGE_KEYS.FRIEND.ORDER,
+    STORAGE_KEYS.FAMILY.ORDER,
     JSON.stringify(questionsOrder)
   );
 
@@ -38,14 +50,14 @@ function setQuestionsOrder() {
 }
 
 let questionsOrder = JSON.parse(
-  localStorage.getItem(STORAGE_KEYS.FRIEND.ORDER) || "null"
+  localStorage.getItem(STORAGE_KEYS.FAMILY.ORDER) || "null"
 );
 
 const handler = new QuestionsHandler({
   questionsData,
   questionsOrder,
   questionDivElement,
-  type: "FRIEND",
+  type: "FAMILY",
 })
 window.handler = handler;
 

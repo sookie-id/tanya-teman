@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sookie Quiz</title>
+  
+    
+        <script type="module" src="../js/family-questions.js" defer></script>
+    
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <img src="../images/sookie-logo.png">
+  <h1>Quiz</h1>
+  <div id="question-box">
+    <p>Loading...</p>
+  </div>
+
+  
+    
+    <script>
+        const questionsData = {"to_child":["Apa hal paling seru yang kamu lakukan minggu ini?","Kalau kamu bisa punya satu kekuatan super, kamu mau apa?","Siapa temanmu yang paling bikin kamu nyaman? Kenapa?","Hal apa yang bikin kamu bangga hari ini?","Apa yang biasanya kamu lakukan kalau lagi sedih?","Apa mimpi terbesarmu saat ini?","Kalau kamu bisa mengubah satu hal di dunia ini, kamu mau ubah apa?","Apa hal kecil yang bikin kamu bahagia?","Apa warna yang kamu rasa mewakili dirimu?","Apa tempat yang ingin kamu kunjungi?","Apa pelajaran sekolah yang kamu suka? Kenapa?","Apa hal yang bikin kamu tertawa banget baru-baru ini?","Apa yang kamu pikirkan tentang keluarga kita?","Kalau kamu punya waktu bebas seharian, kamu mau ngapain?","Apa menurutmu arti dari “teman yang baik”?","Kalau kamu bisa kasih hadiah untuk siapa pun, kamu kasih ke siapa dan apa?","Apa hal yang kamu takutkan? Kenapa?","Apa yang paling kamu sukai dari dirimu sendiri?","Apa yang kamu pikirkan saat kamu merasa kesepian?","Apa yang ingin kamu tanyakan ke aku tapi belum pernah kamu tanya?","Apa makanan yang paling kamu suka dan kenapa?","Apa hal paling lucu yang kamu ingat?","Kalau kamu bisa tinggal di cerita dongeng, kamu mau jadi siapa?","Apa hal yang kamu harap orang dewasa lebih pahami dari anak-anak?","Apa satu hal yang membuat kamu merasa aman di rumah?","Apa yang kamu pikirkan saat melihat langit malam?","Apa kenangan terbaikmu bersama keluarga kita?","Apa menurutmu perasaan itu penting? Kenapa?","Apa yang kamu ingin lakukan lebih sering sama Ayah/Ibu?","Apa kamu pernah merasa nggak dimengerti? Kapan?","Apa hal yang kamu pikir susah dijelaskan ke orang lain?","Apa impianmu kalau sudah besar nanti?","Kalau kamu bisa menghabiskan waktu dengan siapa saja, kamu pilih siapa?","Apa hal yang kamu pelajari dari kesalahan terakhirmu?","Apa yang kamu suka dari sekolah? Apa yang kamu nggak suka?","Apa kamu pernah merasa sangat bangga pada dirimu?","Bagaimana caranya kamu menunjukkan sayang ke orang lain?","Kalau kamu punya satu hari spesial untuk diulang terus, hari apa itu?","Apa yang membuatmu merasa dicintai?","Apa kamu lebih suka tenang atau ramai?","Apa yang kamu bayangkan tentang masa depanmu?","Bagaimana kamu menunjukkan kalau kamu marah?","Apa yang kamu inginkan dari aku sebagai orangtua?","Kapan terakhir kamu merasa sangat bahagia?","Apa hal paling aneh yang kamu pikirkan?","Apa artinya \"rumah\" buatmu?","Apa hal paling sulit yang pernah kamu hadapi?","Apa satu hal yang pengen kamu tahu lebih banyak?","Apa yang kamu pelajari dari film atau cerita favoritmu?","Apa yang bikin kamu merasa “wah aku bisa!”?"],"to_parent":["Apa kenangan masa kecil yang paling menyenangkan buat Ayah/Ibu?","Waktu kecil, apa cita-cita Ayah/Ibu?","Apa hal paling lucu yang pernah terjadi waktu Ayah/Ibu sekolah?","Apa mainan favorit Ayah/Ibu dulu?","Siapa sahabat terbaik Ayah/Ibu waktu kecil?","Ayah/Ibu pernah takut banget sama apa waktu kecil?","Apa hal yang Ayah/Ibu harap bisa diberitahu oleh orangtua kalian dulu?","Waktu Ayah/Ibu merasa sedih dulu, biasanya ngapain?","Apa pelajaran hidup terbesar yang Ayah/Ibu pelajari waktu remaja?","Ayah/Ibu pernah dimarahi karena apa waktu kecil?","Apa film atau lagu yang Ayah/Ibu paling suka zaman dulu?","Ayah/Ibu dulu suka sekolah nggak? Kenapa?","Pernah jatuh cinta waktu sekolah?","Siapa guru yang paling berkesan buat Ayah/Ibu?","Kalau bisa kembali ke masa kecil, Ayah/Ibu mau ngapain?","Apa kenangan paling lucu sama kakek/nenek?","Apa makanan favorit Ayah/Ibu dulu?","Pernah punya mimpi aneh waktu kecil?","Apa pelajaran hidup yang ingin Ayah/Ibu ajarkan ke aku?","Hal apa yang paling Ayah/Ibu syukuri sekarang?","Ayah/Ibu pernah ngerasa gagal? Gimana caranya bangkit?","Apa perbedaan besar antara zaman Ayah/Ibu kecil dan zaman sekarang?","Apa hal yang Ayah/Ibu lakukan diam-diam waktu kecil?","Siapa orang yang sangat menginspirasi Ayah/Ibu?","Kalau punya satu superpower, Ayah/Ibu pengen bisa apa?","Pernah bohong sama orangtua? Kenapa?","Apa liburan paling berkesan waktu kecil?","Apa hal yang dulu Ayah/Ibu pikir penting, tapi sekarang tidak?","Bagaimana Ayah/Ibu tahu kalau aku ini spesial buat kalian?","Apa yang Ayah/Ibu rasakan waktu aku lahir?","Ayah/Ibu pernah nangis karena aku?","Kalau Ayah/Ibu bisa pilih satu nilai hidup yang aku harus punya, apa itu?","Bagaimana Ayah/Ibu tahu kalau Ayah/Ibu saling mencintai?","Apa pelajaran tersulit dalam pernikahan?","Apa yang bikin Ayah/Ibu bahagia akhir-akhir ini?","Apa hal paling gila yang Ayah/Ibu pernah lakukan?","Apa harapan terbesar Ayah/Ibu untuk aku?","Kalau aku lagi sedih, Ayah/Ibu paling ingin aku tahu apa?","Apa impian Ayah/Ibu yang belum tercapai?","Kapan terakhir kali Ayah/Ibu merasa bangga banget?","Ayah/Ibu ingin aku jadi orang seperti apa?","Apa arti kebahagiaan buat Ayah/Ibu?","Siapa orang yang Ayah/Ibu kagumi di dunia ini?","Apa hal kecil yang bikin Ayah/Ibu bersyukur setiap hari?","Apa tradisi keluarga yang paling Ayah/Ibu cintai?","Kalau Ayah/Ibu bisa ulang satu hari dalam hidup, hari apa itu?","Apa kenangan pertama Ayah/Ibu tentang aku?","Hal apa yang Ayah/Ibu pelajari dari menjadi orangtua?","Apa kesalahan yang Ayah/Ibu pelajari untuk tidak ulangi ke anak?","Apa yang membuat Ayah/Ibu merasa dicintai olehku?"]};
+    </script>
+  
+</body>
+</html>
